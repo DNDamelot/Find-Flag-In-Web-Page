@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
-    <title>Elite Auto Auction</title>
+    <title>Prestige Auctions | Главная</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <div class="brand">🏎️ EliteAuction</div>
-        <div>
-            <a href="login.html">Войти в аккаунт</a>
-        </div>
-    </nav>
+
+    <header>
+        <a href="index.html" class="logo">PRESTIGE AUTO</a>
+        <nav class="nav-links">
+            <a href="#">О нас</a>
+            <a href="#">Правила</a>
+            <a href="login.html" class="btn-login">Вход для участников</a>
+        </nav>
+    </header>
 
     <div class="container">
-        <h1>Актуальные лоты</h1>
+        <div class="filters">
+            <span>Все лоты (3)</span>
+            <span style="color: #999;">Текущие торги</span>
+            <span style="color: #999;">Завершенные</span>
+        </div>
+
         <div class="car-grid">
+            
             <div class="car-card">
-                <h3>Silver Spectre V8</h3>
-                <p>Текущая ставка: $45,000</p>
-                <a href="#" class="btn-details" style="background-color: #7f8c8d;">Подробнее</a>
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=60" class="car-img" alt="Car">
+                <div class="car-info">
+                    <h3 class="car-title">2018 Obsidian SUV</h3>
+                    <div class="bid-info">
+                        <span>Лот #104</span>
+                        <span>Ставок: 12</span>
+                    </div>
+                    <div class="car-price">Текущая: $42,500</div>
+                    <br>
+                    <a href="generic.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
             </div>
-            <div class="car-card" style="border-color: #3498db;">
-                <h3>Phoenix Turbo</h3>
-                <p>Текущая ставка: $120,000</p>
-                <a href="car.html" class="btn-details">Подробнее</a>
-            </div>
+
             <div class="car-card">
-                <h3>Thunderhawk SUV</h3>
-                <p>Текущая ставка: $85,000</p>
-                <a href="#" class="btn-details" style="background-color: #7f8c8d;">Подробнее</a>
+                <img src="https://images.unsplash.com/photo-1614200187524-dc4b392ad730?auto=format&fit=crop&w=500&q=60" class="car-img" alt="Phoenix">
+                <div class="car-info">
+                    <h3 class="car-title">1992 Phoenix Turbo</h3>
+                    <div class="bid-info">
+                        <span>Лот #042</span>
+                        <span>Ставок: 45</span>
+                    </div>
+                    <div class="car-price" style="color: #c0392b;">Текущая: $120,000</div>
+                    <br>
+                    <a href="phoenix.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
             </div>
+
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=500&q=60" class="car-img" alt="Classic">
+                <div class="car-info">
+                    <h3 class="car-title">1965 Silver Ghost</h3>
+                    <div class="bid-info">
+                        <span>Лот #099</span>
+                        <span>Ставок: 8</span>
+                    </div>
+                    <div class="car-price">Текущая: $85,000</div>
+                    <br>
+                    <a href="generic.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
         </div>
     </div>
-</body>
 
+</body>
 </html>

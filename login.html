@@ -2,26 +2,67 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Вход в систему - EliteAuction</title>
+    <title>Вход в личный кабинет</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav>
-        <div class="brand">🏎️ EliteAuction</div>
-        <a href="index.html">На главную</a>
-    </nav>
+<body style="background-color: #eceff1;">
 
-    <div class="login-box">
-        <h2 style="text-align: center;">Вход в закрытый профиль</h2>
-        <div id="error-msg">Неверный логин или пароль!</div>
+    <header>
+        <a href="index.html" class="logo">PRESTIGE AUTO</a>
+        <nav class="nav-links">
+            <a href="index.html">На главную</a>
+        </nav>
+    </header>
+
+    <div class="login-wrapper">
+        <h2 style="margin-bottom: 30px; color: var(--primary);">Вход в систему</h2>
+        
+        <p id="error-msg" style="color: #c0392b; display: none; font-size: 14px;">Неверное имя пользователя или пароль</p>
         
         <form id="login-form">
-            <input type="text" id="username-field" placeholder="Логин (Никнейм)" required autocomplete="off">
-            <input type="password" id="password-field" placeholder="Пароль (Название авто)" required>
+            <input type="text" id="username" placeholder="Имя пользователя (Login)" required autocomplete="off">
+            <input type="password" id="password" placeholder="Пароль (Password)" required>
             <button type="submit">ВОЙТИ</button>
         </form>
+        
+        <p style="margin-top: 20px; font-size: 12px; color: #888;">
+            Забыли пароль? Обратитесь в службу поддержки.<br>
+            (Подсказка для задания: Логин - это никнейм владельца, Пароль - полное название желанной машины)
+        </p>
     </div>
 
-    <script src="login.js"></script>
+    <script>
+        const form = document.getElementById('login-form');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const u = document.getElementById('username').value.trim();
+            const p = document.getElementById('password').value.trim();
+            const err = document.getElementById('error-msg');
+
+            // ПРОВЕРКА
+            // Логин: SpeedDemon99
+            // Пароль: Phoenix Turbo (регистр не важен)
+            if (u === "SpeedDemon99" && p.toLowerCase() === "phoenix turbo") {
+                document.body.innerHTML = `
+                    <div class="container" style="text-align: center; margin-top: 100px;">
+                        <h1 style="color: #27ae60;">ДОСТУП РАЗРЕШЕН</h1>
+                        <p>Добро пожаловать, SpeedDemon99.</p>
+                        <div style="background: #fff; padding: 30px; border: 2px dashed #27ae60; display: inline-block; margin-top: 20px; border-radius: 10px;">
+                            <span style="font-family: monospace; font-size: 30px; color: #333;">flag{oil}</span>
+                        </div>
+                        <p style="color: #888; margin-top: 20px;">Скопируй флаг и возвращайся в игру.</p>
+                    </div>
+                `;
+            } else {
+                err.style.display = 'block';
+                // Простая анимация
+                document.querySelector('.login-wrapper').style.transform = 'translateX(5px)';
+                setTimeout(() => {
+                    document.querySelector('.login-wrapper').style.transform = 'translateX(0)';
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html>

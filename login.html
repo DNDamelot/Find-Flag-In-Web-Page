@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в систему - EliteAuction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">🏎️ EliteAuction</div>
+        <a href="index.html">На главную</a>
+    </nav>
+
+    <div class="login-box">
+        <h2 style="text-align: center;">Вход в закрытый профиль</h2>
+        <div id="error-msg">Неверный логин или пароль!</div>
+        
+        <form id="login-form">
+            <input type="text" id="username-field" placeholder="Логин (Никнейм)" required autocomplete="off">
+            <input type="password" id="password-field" placeholder="Пароль (Название авто)" required>
+            <button type="submit">ВОЙТИ</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

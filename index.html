@@ -1,185 +1,180 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestige Auctions | Главная</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <a href="index.html" class="logo">PRESTIGE AUTO</a>
-    <nav class="nav-links">
-        <a href="about.html">О нас</a>
-        <a href="rules.html">Правила</a>
-        <a href="faq.html">FAQ</a>
-        <a href="login.html" class="btn-login">Вход</a>
-    </nav>
-</header>
+    <header>
+        <a href="index.html" class="logo">Prestige<span style="color:#fff">Auto</span></a>
+        <nav class="nav-links">
+            <a href="about.html">О нас</a>
+            <a href="rules.html">Правила</a>
+            <a href="faq.html">FAQ</a>
+            <a href="login.html" class="btn-login">Вход</a>
+        </nav>
+    </header>
 
-<div class="container">
+    <div class="container">
 
-    <!-- ФИЛЬТРЫ -->
-    <div class="filters">
-        <span>Все лоты (10)</span>
-        <span style="color: #999;">Текущие торги</span>
-        <span style="color: #999;">Завершенные</span>
+        <div class="filters">
+            <span>Все лоты (10)</span>
+            <span style="color: var(--text-muted);">Текущие торги</span>
+            <span style="color: var(--text-muted);">Завершенные</span>
+        </div>
+
+        <div class="car-grid">
+
+            <div class="car-card" style="animation-delay: 0.1s">
+                <img src="https://content.homenetiol.com/2000292/2143540/0x0/44d0c08e70af410d8dd73a3ee9682f6f.jpg"
+                    class="car-img" alt="2018 Obsidian SUV">
+                <div class="car-info">
+                    <h3 class="car-title">2018 Obsidian SUV</h3>
+                    <div class="bid-info">
+                        <span>Лот #104</span>
+                        <span>Ставок: 12</span>
+                    </div>
+                    <div class="car-price">Текущая: $42,500</div>
+                    <a href="car_obsidian.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.3s">
+                <div
+                    style="position:absolute; top:10px; right:10px; background:var(--primary); color:#000; padding:2px 8px; font-size:10px; font-weight:bold;">
+                    HOT</div>
+                <img src="https://bringatrailer.com/wp-content/uploads/2020/05/1992_toyota_mr2_159130919608495d565e1992_toyota_mr2_1591309195f66e7dff9f98764dadee9be9f-5783-4ceb-949b-c9cc1b5e90fe-c8MHOq-scaled.jpg?fit=940%2C626"
+                    class="car-img" alt="1992 Phoenix Turbo">
+                <div class="car-info">
+                    <h3 class="car-title">1992 Phoenix Turbo</h3>
+                    <div class="bid-info">
+                        <span>Лот #042</span>
+                        <span>Ставок: 45</span>
+                    </div>
+                    <div class="car-price">Текущая: $120,000</div>
+                    <a href="phoenix.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.3s">
+                <img src="https://cdn.dealeraccelerate.com/stlouis/1/1082/9444/1920x1440/1965-rolls-royce-silver-cloud-iii"
+                    class="car-img" alt="1965 Silver Ghost">
+                <div class="car-info">
+                    <h3 class="car-title">1965 Silver Ghost</h3>
+                    <div class="bid-info">
+                        <span>Лот #099</span>
+                        <span>Ставок: 8</span>
+                    </div>
+                    <div class="car-price">Текущая: $85,000</div>
+                    <a href="car_ghost65.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.4s">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Toyota_Century%2C_Paris%2C_France.jpg/1200px-Toyota_Century%2C_Paris%2C_France.jpg"
+                    class="car-img" alt="2012 Imperial V12">
+                <div class="car-info">
+                    <h3 class="car-title">2012 Imperial V12</h3>
+                    <div class="bid-info">
+                        <span>Лот #121</span>
+                        <span>Ставок: 17</span>
+                    </div>
+                    <div class="car-price">Текущая: $98,000</div>
+                    <a href="car_imperial.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.5s">
+                <img src="https://www.supercars.net/blog/wp-content/uploads/2016/04/2005_Pontiac_SolsticeClubRacer5.jpg"
+                    class="car-img" alt="2005 Solstice Roadster">
+                <div class="car-info">
+                    <h3 class="car-title">2005 Solstice Roadster</h3>
+                    <div class="bid-info">
+                        <span>Лот #305</span>
+                        <span>Ставок: 26</span>
+                    </div>
+                    <div class="car-price">Текущая: $33,800</div>
+                    <a href="car_solstice.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.6s">
+                <img src="https://www.mclarenscottsdale.com/imagetag/76/main/f/Used-2020-McLaren-720S-Performance-1634376860.jpg"
+                    class="car-img" alt="2020 Onyx HyperSport">
+                <div class="car-info">
+                    <h3 class="car-title">2020 Onyx HyperSport</h3>
+                    <div class="bid-info">
+                        <span>Лот #441</span>
+                        <span>Ставок: 5</span>
+                    </div>
+                    <div class="car-price">$410,000</div>
+                    <a href="car_onyx.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.7s">
+                <img src="https://www.oldcarsweekly.com/uploads/MTk3NTA0OTU0Nzk2MDkxMjkx/1-1978-mustang-ii-a096.jpg"
+                    class="car-img" alt="1978 Stallion GT">
+                <div class="car-info">
+                    <h3 class="car-title">1978 Stallion GT</h3>
+                    <div class="bid-info">
+                        <span>Лот #221</span>
+                        <span>Ставок: 14</span>
+                    </div>
+                    <div class="car-price">$59,900</div>
+                    <a href="car_stallion.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.8s">
+                <img src="https://media.ed.edmunds-media.com/mitsubishi/eclipse-cross/2018/oem/2018_mitsubishi_eclipse-cross_4dr-suv_sel-touring_fq_oem_1_1600.jpg"
+                    class="car-img" alt="2019 Eclipse RS">
+                <div class="car-info">
+                    <h3 class="car-title">2019 Eclipse RS</h3>
+                    <div class="bid-info">
+                        <span>Лот #303</span>
+                        <span>Ставок: 34</span>
+                    </div>
+                    <div class="car-price">$74,500</div>
+                    <a href="car_eclipse.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 0.9s">
+                <img src="https://www.carbuffnetwork.com/wp-content/uploads/2018/05/kip3.jpg" class="car-img"
+                    alt="1969 Wraith Sport">
+                <div class="car-info">
+                    <h3 class="car-title">1969 Wraith Sport</h3>
+                    <div class="bid-info">
+                        <span>Лот #512</span>
+                        <span>Ставок: 4</span>
+                    </div>
+                    <div class="car-price">$140,000</div>
+                    <a href="car_wraith.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+            <div class="car-card" style="animation-delay: 1.0s">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg/1200px-Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg"
+                    class="car-img" alt="2001 Tempest XR4">
+                <div class="car-info">
+                    <h3 class="car-title">2001 Tempest XR4</h3>
+                    <div class="bid-info">
+                        <span>Лот #411</span>
+                        <span>Ставок: 22</span>
+                    </div>
+                    <div class="car-price">$24,200</div>
+                    <a href="car_tempest.html" class="btn-view">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <div class="car-grid">
-
-        <!-- 1 -->
-        <div class="car-card">
-            <img src="https://content.homenetiol.com/2000292/2143540/0x0/44d0c08e70af410d8dd73a3ee9682f6f.jpg" class="car-img" alt="2018 Obsidian SUV">
-            <div class="car-info">
-                <h3 class="car-title">2018 Obsidian SUV</h3>
-                <div class="bid-info">
-                    <span>Лот #104</span>
-                    <span>Ставок: 12</span>
-                </div>
-                <div class="car-price">Текущая: $42,500</div>
-                <br>
-                <a href="car_obsidian.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="car-card">
-            <img src="https://bringatrailer.com/wp-content/uploads/2020/05/1992_toyota_mr2_159130919608495d565e1992_toyota_mr2_1591309195f66e7dff9f98764dadee9be9f-5783-4ceb-949b-c9cc1b5e90fe-c8MHOq-scaled.jpg?fit=940%2C626" class="car-img" alt="1992 Phoenix Turbo">
-            <div class="car-info">
-                <h3 class="car-title">1992 Phoenix Turbo</h3>
-                <div class="bid-info">
-                    <span>Лот #042</span>
-                    <span>Ставок: 45</span>
-                </div>
-                <div class="car-price" style="color: #c0392b;">Текущая: $120,000</div>
-                <br>
-                <a href="phoenix.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="car-card">
-            <img src="https://cdn.dealeraccelerate.com/stlouis/1/1082/9444/1920x1440/1965-rolls-royce-silver-cloud-iii" class="car-img" alt="1965 Silver Ghost">
-            <div class="car-info">
-                <h3 class="car-title">1965 Silver Ghost</h3>
-                <div class="bid-info">
-                    <span>Лот #099</span>
-                    <span>Ставок: 8</span>
-                </div>
-                <div class="car-price">Текущая: $85,000</div>
-                <br>
-                <a href="car_ghost65.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="car-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Toyota_Century%2C_Paris%2C_France.jpg/1200px-Toyota_Century%2C_Paris%2C_France.jpg" class="car-img" alt="2012 Imperial V12">
-            <div class="car-info">
-                <h3 class="car-title">2012 Imperial V12</h3>
-                <div class="bid-info">
-                    <span>Лот #121</span>
-                    <span>Ставок: 17</span>
-                </div>
-                <div class="car-price">Текущая: $98,000</div>
-                <br>
-                <a href="car_imperial.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="car-card">
-            <img src="https://www.supercars.net/blog/wp-content/uploads/2016/04/2005_Pontiac_SolsticeClubRacer5.jpg" class="car-img" alt="2005 Solstice Roadster">
-            <div class="car-info">
-                <h3 class="car-title">2005 Solstice Roadster</h3>
-                <div class="bid-info">
-                    <span>Лот #305</span>
-                    <span>Ставок: 26</span>
-                </div>
-                <div class="car-price">Текущая: $33,800</div>
-                <br>
-                <a href="car_solstice.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="car-card">
-            <img src="https://www.mclarenscottsdale.com/imagetag/76/main/f/Used-2020-McLaren-720S-Performance-1634376860.jpg" class="car-img" alt="2020 Onyx HyperSport">
-            <div class="car-info">
-                <h3 class="car-title">2020 Onyx HyperSport</h3>
-                <div class="bid-info">
-                    <span>Лот #441</span>
-                    <span>Ставок: 5</span>
-                </div>
-                <div class="car-price">$410,000</div>
-                <br>
-                <a href="car_onyx.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="car-card">
-            <img src="https://www.oldcarsweekly.com/uploads/MTk3NTA0OTU0Nzk2MDkxMjkx/1-1978-mustang-ii-a096.jpg" class="car-img" alt="1978 Stallion GT">
-            <div class="car-info">
-                <h3 class="car-title">1978 Stallion GT</h3>
-                <div class="bid-info">
-                    <span>Лот #221</span>
-                    <span>Ставок: 14</span>
-                </div>
-                <div class="car-price">$59,900</div>
-                <br>
-                <a href="car_stallion.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 8 -->
-        <div class="car-card">
-            <img src="https://media.ed.edmunds-media.com/mitsubishi/eclipse-cross/2018/oem/2018_mitsubishi_eclipse-cross_4dr-suv_sel-touring_fq_oem_1_1600.jpg" class="car-img" alt="2019 Eclipse RS">
-            <div class="car-info">
-                <h3 class="car-title">2019 Eclipse RS</h3>
-                <div class="bid-info">
-                    <span>Лот #303</span>
-                    <span>Ставок: 34</span>
-                </div>
-                <div class="car-price">$74,500</div>
-                <br>
-                <a href="car_eclipse.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 9 -->
-        <div class="car-card">
-            <img src="https://www.carbuffnetwork.com/wp-content/uploads/2018/05/kip3.jpg" class="car-img" alt="1969 Wraith Sport">
-            <div class="car-info">
-                <h3 class="car-title">1969 Wraith Sport</h3>
-                <div class="bid-info">
-                    <span>Лот #512</span>
-                    <span>Ставок: 4</span>
-                </div>
-                <div class="car-price">$140,000</div>
-                <br>
-                <a href="car_wraith.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-        <!-- 10 -->
-        <div class="car-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg/1200px-Geneva_MotorShow_2013_-_Lamborghini_Veneno_1.jpg" class="car-img" alt="2001 Tempest XR4">
-            <div class="car-info">
-                <h3 class="car-title">2001 Tempest XR4</h3>
-                <div class="bid-info">
-                    <span>Лот #411</span>
-                    <span>Ставок: 22</span>
-                </div>
-                <div class="car-price">$24,200</div>
-                <br>
-                <a href="car_tempest.html" class="btn-view">ПОДРОБНЕЕ</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 </body>
+
 </html>

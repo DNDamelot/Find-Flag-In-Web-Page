@@ -1,78 +1,117 @@
 /* style.css */
 :root {
-    --primary: #2c3e50; /* Строгий темно-синий */
-    --accent: #c0392b;  /* Акцентный красный для кнопок */
-    --bg: #f8f9fa;
-    --text: #333;
-    --light-gray: #e9ecef;
+    --bg-dark: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --primary: #d4af37; /* Premium Gold */
+    --primary-hover: #b4942b;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent-red: #e74c3c;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-/* Шапка */
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Header --- */
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 0 5%;
+    background: rgba(15, 15, 15, 0.95);
+    border-bottom: 1px solid #333;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-weight: bold;
     font-size: 24px;
+    font-weight: 700;
     color: var(--primary);
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    margin-left: 25px;
-    font-weight: 500;
+    color: var(--text-main);
+    margin-left: 30px;
     font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.nav-links .btn-login {
+.nav-links a:hover { color: var(--primary); }
+
+.btn-login {
     border: 1px solid var(--primary);
     padding: 8px 20px;
-    border-radius: 4px;
-    transition: 0.3s;
+    border-radius: 2px;
+    color: var(--primary) !important;
 }
 
-.nav-links .btn-login:hover {
-    background-color: var(--primary);
-    color: white;
+.btn-login:hover {
+    background: var(--primary);
+    color: #000 !important;
 }
 
-/* Контейнер */
+/* --- Layout --- */
 .container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Сетка машин (Главная) */
+/* --- Filters --- */
 .filters {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
+.filters span {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filters span:first-child {
+    color: var(--primary);
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+/* --- Grid --- */
 .car-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -80,137 +119,167 @@ header {
 }
 
 .car-card {
-    background: white;
-    border: 1px solid #e1e1e1;
-    border-radius: 6px;
+    background: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 4px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.6s ease forwards;
 }
 
 .car-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: var(--primary);
 }
 
 .car-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background-color: #ccc;
+    filter: brightness(0.9);
+    transition: 0.3s;
 }
 
-.car-info {
-    padding: 20px;
-}
+.car-card:hover .car-img { filter: brightness(1.1); }
+
+.car-info { padding: 20px; }
 
 .car-title {
     font-size: 18px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    color: var(--primary);
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.bid-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
 .car-price {
     font-size: 20px;
+    color: var(--primary);
     font-weight: bold;
-    color: var(--text);
-}
-
-.bid-info {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .btn-view {
     display: block;
-    width: 100%;
     text-align: center;
-    background-color: var(--primary);
-    color: white;
-    padding: 10px 0;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+    background: #333;
+    color: #fff;
+    padding: 12px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-/* Страница одной машины */
+.btn-view:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* --- Detail Page Specifics --- */
 .lot-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
     margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
 }
 
 .specs-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 40px;
-    background: white;
 }
 
 .specs-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
 }
 
-.specs-key { font-weight: bold; color: #555; width: 30%; }
+.specs-key {
+    color: var(--text-muted);
+    width: 40%;
+}
 
+/* --- Comments --- */
 .comments-wrapper {
-    background: white;
+    background: var(--bg-card);
     padding: 30px;
-    border: 1px solid #e1e1e1;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .comment-item {
-    border-bottom: 1px solid #f1f1f1;
-    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
 }
 
 .comment-meta {
     font-size: 12px;
-    color: #888;
+    color: var(--primary);
     margin-bottom: 5px;
 }
 
-.comment-author {
-    font-weight: bold;
-    color: var(--primary);
-    margin-right: 10px;
-}
+.comment-author { font-weight: bold; color: #fff; margin-right: 10px; }
 
-/* Форма входа */
+/* --- Login Page --- */
 .login-wrapper {
     max-width: 400px;
-    margin: 80px auto;
-    background: white;
+    margin: 100px auto;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    background: var(--bg-card);
+    border: 1px solid #333;
     text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .login-wrapper input {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+    background: #0f0f0f;
+    border: 1px solid #333;
+    color: #fff;
+    outline: none;
 }
+
+.login-wrapper input:focus { border-color: var(--primary); }
 
 .login-wrapper button {
     width: 100%;
-    padding: 12px;
-    background-color: var(--accent);
-    color: white;
+    padding: 15px;
+    background: var(--primary);
     border: none;
-    border-radius: 4px;
+    color: #000;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-wrapper button:hover { background: var(--primary-hover); }
+
+/* --- Footer/Utility --- */
+.flag-container {
+    text-align: center;
+    margin-top: 100px;
+    border: 2px solid var(--primary);
+    padding: 50px;
+}
+.flag-text {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    color: var(--primary);
+    margin: 20px 0;
+    padding: 20px;
+    background: #000;
+    display: inline-block;
 }

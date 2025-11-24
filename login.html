@@ -5,29 +5,30 @@
     <title>Вход в личный кабинет</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #eceff1;">
+<body>
 
     <header>
-        <a href="index.html" class="logo">PRESTIGE AUTO</a>
+        <a href="index.html" class="logo">Prestige<span style="color:#fff">Auto</span></a>
         <nav class="nav-links">
             <a href="index.html">На главную</a>
         </nav>
     </header>
 
     <div class="login-wrapper">
-        <h2 style="margin-bottom: 30px; color: var(--primary);">Вход в систему</h2>
+        <h2 style="margin-bottom: 30px; color: var(--primary); letter-spacing: 2px;">MEMBER LOGIN</h2>
         
-        <p id="error-msg" style="color: #c0392b; display: none; font-size: 14px;">Неверное имя пользователя или пароль</p>
+        <p id="error-msg" style="color: var(--accent-red); display: none; font-size: 14px; margin-bottom: 20px; background: rgba(231, 76, 60, 0.1); padding: 10px;">
+            ⚠️ Ошибка аутентификации
+        </p>
         
         <form id="login-form">
-            <input type="text" id="username" placeholder="Login" required autocomplete="off">
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">ВОЙТИ</button>
+            <input type="text" id="username" placeholder="Имя пользователя" required autocomplete="off">
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button type="submit">ВОЙТИ В СИСТЕМУ</button>
         </form>
         
-        <p style="margin-top: 20px; font-size: 12px; color: #888;">
-            Забыли пароль? Обратитесь в службу поддержки.<br>
-            (Подсказка для задания: Логин - это никнейм владельца, Пароль - полное название желанной машины)
+        <p style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
+            Забыли пароль? Обратитесь в консьерж-службу.<br>
         </p>
     </div>
 
@@ -40,29 +41,47 @@
             const p = document.getElementById('password').value.trim();
             const err = document.getElementById('error-msg');
 
-            // ПРОВЕРКА
-            // Логин: SpeedDemon99
-            // Пароль: Phoenix Turbo (регистр не важен)
+            // ПРОВЕРКА (Логика из оригинального файла)
             if (u === "SpeedDemon99" && p.toLowerCase() === "phoenix turbo") {
+                // Обновленный визуальный вывод при успехе
                 document.body.innerHTML = `
-                    <div class="container" style="text-align: center; margin-top: 100px;">
-                        <h1 style="color: #27ae60;">ДОСТУП РАЗРЕШЕН</h1>
-                        <p>Добро пожаловать, SpeedDemon99.</p>
-                        <div style="background: #fff; padding: 30px; border: 2px dashed #27ae60; display: inline-block; margin-top: 20px; border-radius: 10px;">
-                            <span style="font-family: monospace; font-size: 30px; color: #333;">flag{oil}</span>
+                    <div class="container" style="text-align: center; margin-top: 50px;">
+                        <h1 style="color: var(--primary); font-size: 48px; margin-bottom: 20px;">ДОСТУП РАЗРЕШЕН</h1>
+                        <p style="font-size: 18px; color: #fff;">Добро пожаловать в VIP-зону, SpeedDemon99.</p>
+                        
+                        <div style="margin-top: 50px; padding: 40px; background: #1a1a1a; border: 1px solid var(--primary); display: inline-block; box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);">
+                            <p style="color: var(--text-muted); margin-bottom: 10px;">SECRET FLAG:</p>
+                            <span style="font-family: 'Courier New', monospace; font-size: 36px; color: var(--primary); letter-spacing: 3px; font-weight: bold;">flag{oil}</span>
                         </div>
-                        <p style="color: #888; margin-top: 20px;">Скопируй флаг и возвращайся в игру.</p>
+                        
+                        <p style="color: var(--text-muted); margin-top: 40px;">Скопируйте флаг и возвращайтесь в игру.</p>
+                        <a href="index.html" style="display: inline-block; margin-top: 20px; color: #fff; border-bottom: 1px solid var(--primary);">Выйти</a>
                     </div>
                 `;
+                // Добавляем стиль body чтобы не пропал фон
+                document.body.style.backgroundColor = "#0f0f0f"; 
             } else {
                 err.style.display = 'block';
-                // Простая анимация
-                document.querySelector('.login-wrapper').style.transform = 'translateX(5px)';
+                // Анимация ошибки
+                document.querySelector('.login-wrapper').style.animation = 'shake 0.5s';
                 setTimeout(() => {
-                    document.querySelector('.login-wrapper').style.transform = 'translateX(0)';
-                }, 100);
+                    document.querySelector('.login-wrapper').style.animation = '';
+                }, 500);
             }
         });
+
+        // Добавление кейфреймов для JS анимации ошибки, если их нет в CSS
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                50% { transform: translateX(5px); }
+                75% { transform: translateX(-5px); }
+                100% { transform: translateX(0); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
